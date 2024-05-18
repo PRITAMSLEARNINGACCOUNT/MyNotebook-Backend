@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const AuthDB = require("../Database_Schemas/User_Authentication");
 const { body, validationResult } = require("express-validator");
 const router = express.Router();
-const Bcrypt = require("bcrypt");
+const Bcrypt = require("bcryptjs");
 const JWT = require("jsonwebtoken");
 require("dotenv").config();
 router.post("/register", body("Email").isEmail(), async (request, response) => {
